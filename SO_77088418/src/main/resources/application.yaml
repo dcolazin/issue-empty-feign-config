@@ -1,0 +1,4 @@
+com:
+  github:
+    dcolazin:
+      allowed-values: a,b,c,d
