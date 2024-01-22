@@ -1,0 +1,11 @@
+spring:
+  zipkin:
+    enabled: false
+management:
+  tracing:
+    tracing:
+      enabled: true
+      baggage:
+        correlation:
+          fields: classBaggage, methodBaggage, businessBaggage
+        remote-fields: classBaggage, methodBaggage, businessBaggage

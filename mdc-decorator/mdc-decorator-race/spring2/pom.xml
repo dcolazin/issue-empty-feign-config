@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>mdc-decorator-race</artifactId>
+    <artifactId>mdc-decorator-race-sb2</artifactId>
     <version>1.0-SB2</version>
 
     <dependencies>
