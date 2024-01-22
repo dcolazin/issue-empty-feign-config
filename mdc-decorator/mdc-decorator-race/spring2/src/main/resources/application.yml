@@ -1,0 +1,8 @@
+spring:
+  sleuth:
+    baggage:
+      remote-fields: classBaggage, methodBaggage, businessBaggage
+      local-fields: classBaggage, methodBaggage, businessBaggage
+      correlation-fields: classBaggage, methodBaggage, businessBaggage
+  zipkin:
+    enabled: false
