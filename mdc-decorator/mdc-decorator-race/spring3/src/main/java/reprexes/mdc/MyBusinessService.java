@@ -28,6 +28,7 @@ public class MyBusinessService {
     private static final int DEFAULT_PARALLELISM = 8;
 
     private final Tracer tracer;
+    private final MyBaggageService baggageService;
 
     public List<String> businessLogic() {
         List<Integer> inputs = List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -81,9 +82,9 @@ public class MyBusinessService {
     private void decorateBaggage(String value) {
         StackWalker walker = StackWalker.getInstance();
         String methodName = walker.walk(frames -> frames.skip(1).findFirst().map(StackWalker.StackFrame::getMethodName)).orElse(null);
-        MyBaggageService.updateValue(CLASS_BAGGAGE, this.getClass().getName());
-        MyBaggageService.updateValue(METHOD_BAGGAGE, methodName);
-        MyBaggageService.updateValue(BUSINESS_BAGGAGE, value);
+        baggageService.updateValue(CLASS_BAGGAGE, this.getClass().getName());
+        baggageService.updateValue(METHOD_BAGGAGE, methodName);
+        baggageService.updateValue(BUSINESS_BAGGAGE, value);
     }
 
 }
